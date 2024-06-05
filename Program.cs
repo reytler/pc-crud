@@ -51,14 +51,14 @@ builder.Services.AddDbContext<MysqlContext>(options =>
 
 builder.Services.AddCors();
 
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(app =>
 {
-    app.SwaggerDoc("v1", new OpenApiInfo { Title = "ms_os" });
+    app.SwaggerDoc("v1", new OpenApiInfo { Title = "crud_api" });
 
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
 
-    app.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
 });
 
 var app = builder.Build();
