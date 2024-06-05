@@ -45,7 +45,7 @@ builder.Services.AddDbContext<MysqlContext>(options =>
     var port = builder.Configuration["DATABASE_PORT"];
     var user = builder.Configuration["DATABASE_USER"];
     var password = builder.Configuration["DATABASE_PASSWORD"];
-    var vaConnectionString = $"Server={host},{port};Database={dataBase};User={user};Password={password};";
+    var vaConnectionString = $"Server={host};Database={dataBase};User={user};Password={password};";
     options.UseMySql(vaConnectionString, ServerVersion.AutoDetect(vaConnectionString));
 });
 
