@@ -1,6 +1,6 @@
 ﻿namespace crudpcapi.Utils;
 
-public static class Utils
+public static class Util
 {
     public static bool ValidateCpf(string cpf)
     {

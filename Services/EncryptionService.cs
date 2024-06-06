@@ -60,7 +60,7 @@ public class EncryptionService
         }
     }
 
-    public static string GerarHash(string input)
+    public string GerarHash(string input)
     {
         MD5 md5Hash = MD5.Create();
         byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));

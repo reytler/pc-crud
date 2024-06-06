@@ -1,4 +1,5 @@
 using crudpcapi;
+using crudpcapi.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -11,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 var key = Encoding.ASCII.GetBytes(Config.Secret);
 
 // Add services to the container.
-
+builder.Services.AddScoped<IUserDB, UserDB>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

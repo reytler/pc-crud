@@ -26,19 +26,19 @@ public abstract class BaseController : ControllerBase
             return await func();
         } catch (NotFoundException e)
         {
-            return NotFound(e.CompleteErroMessage());
+            return NotFound(e.Message);
         } catch (BadRequestException e)
         {
-            return BadRequest(e.CompleteErroMessage());
+            return BadRequest(e.Message);
         }catch (ForbiddenException e)
         {
-            return StatusCode(403, e.CompleteErroMessage());
+            return StatusCode(403, e.Message);
         }catch(ExternalApiException e)
         {
-            return StatusCode(e.StatusCode, e.CompleteErroMessage());
+            return StatusCode(e.StatusCode, e.Message);
         }catch(Exception e)
         {
-            return StatusCode(500, e.CompleteErroMessage());
+            return StatusCode(500, e.Message);
         }
     }
 }

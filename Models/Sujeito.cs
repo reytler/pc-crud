@@ -8,7 +8,7 @@ public class Sujeito
 {
     [Key,Column("CODIGO")]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public long Id { get; set; }
+    public long? Id { get; set; }
     [Column("NOME")]
     public string Nome { get; set; }
     [Column("VULGO")]

@@ -8,10 +8,10 @@ public class Photo
 {
     [Key, Column("CODIGO")]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public long Id { get; set; }
+    public long? Id { get; set; }
 
     [Column("CODIGO_SUJEITO")]
-    public int SujeitoId { get; set; }
+    public long SujeitoId { get; set; }
 
     [Column("PHOTO_BYTES")]
     public byte[] PhotoBytes { get; set; }
